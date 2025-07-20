@@ -5,9 +5,9 @@ import Navbar from '~/components/navbar/Navbar.vue';
 
 <template>
     <Navbar />
-    <div>
+    <main class="pt-24">
         <slot />
-    </div>
+    </main>
 </template>
 
 <style>
