@@ -11,9 +11,6 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
-  css: [
-    '@/assets/css/tailwind.css',
-  ],
   shadcn: {
     /**
      * Prefix for all the imported component
