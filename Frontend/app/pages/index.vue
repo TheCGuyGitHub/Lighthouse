@@ -1,7 +1,8 @@
 <template>
-    <div class="fixed w-full shadow px-4 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 border-gray-900 dark:border-gray-700 border my-4 rounded-md">
-            <Card>
+    <div class="w-full shadow px-4 md:px-8">
+        <!--- Status Cards --->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 border-border border my-4 rounded-md bg-background">
+            <Card class="bg-card text-card-foreground">
                 <CardHeader>
                     <CardTitle>
                         Monitors Up
@@ -14,7 +15,7 @@
                 </CardContent>
             </Card>
 
-            <Card>
+            <Card class="bg-card text-card-foreground">
                 <CardHeader>
                     <CardTitle>
                         Monitors Down
@@ -26,8 +27,8 @@
                     </p>
                 </CardContent>
             </Card>
-
-            <Card>
+            
+            <Card class="bg-card text-card-foreground">
                 <CardHeader>
                     <CardTitle>
                         Servers Healthy
@@ -40,7 +41,7 @@
                 </CardContent>
             </Card>
 
-            <Card>
+            <Card class="bg-card text-card-foreground">
                 <CardHeader>
                     <CardTitle>
                         Servers Offline

@@ -2,7 +2,7 @@
     <DropdownMenu>
         <DropdownMenuTrigger as-child class="flex items-center gap-2">
             <Button variant="ghost">
-                <User />
+                <User class="h-[1.2rem] w-[1.2rem]" />
             </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -25,7 +25,7 @@ import { User } from 'lucide-vue-next';
 import { ref } from 'vue';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import pb from '~/lib/pocketbase';
+import pb from '@/lib/pocketbase';
 
 const username = ref('');
 

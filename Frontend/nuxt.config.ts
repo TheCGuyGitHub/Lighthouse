@@ -9,7 +9,12 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
   ],
   colorMode: {
-    classSuffix: ''
+    classSuffix: '',
+    preference: 'system',
+    fallback: 'light',
+    classPrefix: '',
+    storageKey: 'theme',
+    dataValue: 'theme',
   },
   shadcn: {
     /**
@@ -26,9 +31,14 @@ export default defineNuxtConfig({
     '@/lib': './app/lib'
   },
   vite: {
-  plugins: [
-    // Use dynamic import for ESM compatibility
-    (await import('vite-tsconfig-paths')).default()
-  ]
-}
+    plugins: [
+      // Use dynamic import for ESM compatibility
+      (await import('vite-tsconfig-paths')).default()
+    ],
+  },
+  tailwindcss: {
+    config: {
+      darkMode: 'class'
+    }
+  },
 })

@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { Toaster } from '@/components/ui/sonner'
 import Navbar from '~/components/navbar/Navbar.vue';
+import 'vue-sonner/style.css'
 
 </script>
 
 <template>
+    <Toaster />
+
     <Navbar />
     <main class="pt-24">
         <slot />
@@ -33,7 +37,7 @@ import Navbar from '~/components/navbar/Navbar.vue';
         --accent-foreground: 240 5.9% 10%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
+        --border: 240 5.9% 0%;
         --input: 240 5.9% 90%;
         --ring: 240 10% 3.9%;
         --chart-1: 12 76% 61%;
