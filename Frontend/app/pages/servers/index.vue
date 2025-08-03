@@ -75,19 +75,17 @@
                             <TableHead>RAM Usage</TableHead>
                             <TableHead>CPU Usage</TableHead>
                             <TableHead>Disk Usage</TableHead>
-                            <TableHead>Temperature</TableHead>
                             <TableHead>Agent Version</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         <template v-for="server in servers" :key="server.id">
                             <TableRow>
-                                <TableCell>{{ server.name }}</TableCell>
+                                <TableCell><NuxtLink to="/servers/">{{ server.name }}</NuxtLink></TableCell>
                                 <TableCell>{{ server.state }}</TableCell>
-                                <TableCell>{{ server.quickdata?.ram || 'N/A' }} </TableCell>
-                                <TableCell>{{ server.quickdata?.cpu || 'N/A' }}</TableCell>
-                                <TableCell>{{ server.quickdata?.disk || 'N/A' }}</TableCell>
-                                <TableCell>{{ server.quickdata?.temp || 'N/A' }}</TableCell>
+                                <TableCell>{{ server.quickdata?.memory_used || 'N/A' }} </TableCell>
+                                <TableCell>{{ server.quickdata?.cpu_usage || 'N/A' }}</TableCell>
+                                <TableCell>{{ server.quickdata?.disk_used || 'N/A' }}</TableCell>
                                 <TableCell>{{ server.quickdata?.agent_version || 'N/A' }}</TableCell>
                             </TableRow>
                         </template>
