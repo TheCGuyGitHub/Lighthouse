@@ -66,13 +66,11 @@
                 </p>
             </div>
             <!--- System stats for ram, cpu, disk, temp, agent version as a Table --->
-            <div class="w-full overflow-x-auto">
+            <div class="col-span-4">
                 <Table class="min-w-[900px] w-full">
                     <TableHeader>
                         <TableRow>
                             <TableHead>Name</TableHead>
-                            <TableHead>Hostname</TableHead>
-                            <TableHead>Port</TableHead>
                             <TableHead>Status</TableHead>
                             <TableHead>RAM Usage</TableHead>
                             <TableHead>CPU Usage</TableHead>
@@ -85,10 +83,8 @@
                         <template v-for="server in servers" :key="server.id">
                             <TableRow>
                                 <TableCell>{{ server.name }}</TableCell>
-                                <TableCell>{{ server.hostname }}</TableCell>
-                                <TableCell>{{ server.port || 'N/A' }}</TableCell>
                                 <TableCell>{{ server.state }}</TableCell>
-                                <TableCell>{{ server.quickdata?.ram || 'N/A' }}</TableCell>
+                                <TableCell>{{ server.quickdata?.ram || 'N/A' }} </TableCell>
                                 <TableCell>{{ server.quickdata?.cpu || 'N/A' }}</TableCell>
                                 <TableCell>{{ server.quickdata?.disk || 'N/A' }}</TableCell>
                                 <TableCell>{{ server.quickdata?.temp || 'N/A' }}</TableCell>
