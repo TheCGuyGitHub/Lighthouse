@@ -48,6 +48,11 @@ func registerCronJobs(app core.App) {
 			log.Println("Error: server_stats collection not found")
 			return
 		}
+		serversCollection, err := app.FindCollectionByNameOrId("servers")
+		if err != nil {
+			log.Println("Error whilst trying to get 'servers' collection!")
+			return
+		}
 
 		client := &http.Client{Timeout: 10 * time.Second}
 
@@ -88,10 +93,23 @@ func registerCronJobs(app core.App) {
 			serverStats.Set("stats", stats)
 			serverStats.Set("type", "1m")
 
+			server, err := app.FindRecordById(serversCollection, server.Id)
+			if err != nil {
+				log.Println("Could not find Record in 'servers' Collection")
+				return
+			}
+			server.Set("quickdata", stats)
+
 			if err := app.Save(serverStats); err != nil {
 				log.Printf("Error saving stats for server %s: %v", name, err)
 			} else {
 				log.Printf("Successfully saved stats for server %s", name)
+			}
+
+			if err := app.Save(server); err != nil {
+				log.Printf("Error saving server %s: %v", name, err)
+			} else {
+				log.Printf("Successfully saved server %s", name)
 			}
 		}
 	})
