@@ -1,4 +1,4 @@
-module github.com/thecguygithub/lighthouse
+module github.com/thecguygithub/lighthouse/agent
 
 go 1.23.3
 

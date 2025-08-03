@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/thecguygithub/lighthouse/collectors"
+	"github.com/thecguygithub/lighthouse/agent/collectors"
 )
 
 func main() {
