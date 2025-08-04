@@ -1,5 +1,3 @@
-import type { ZodFloat64 } from "zod";
-
 export interface Server {
     id: string;
     name: string;
@@ -20,8 +18,8 @@ export interface Server {
             write: number;
         };
         bandwidth?: {
-            download: ZodFloat64;
-            upload: ZodFloat64;
+            download: number;
+            upload: number;
         };
         temp_sensors?: Array<{
             name: string;
@@ -31,8 +29,6 @@ export interface Server {
     };
 }
 
-// Data from cpu usage, memory cached, memory used, memory total, disk used, disk total, disk io, bandwith, all temp sensors, agent version, gpu, docker, proxmox.
-// NOTE: Stuff like temp, gpu, docker, proxmox are not always available, so they should be optional.
 export interface ServerData {
     server_id: string;
     created: string;
@@ -48,8 +44,8 @@ export interface ServerData {
             write: number;
         };
         bandwidth?: {
-            download: ZodFloat64;
-            upload: ZodFloat64;
+            download: number;
+            upload: number;
         };
         temp_sensors?: Array<{
             name: string;

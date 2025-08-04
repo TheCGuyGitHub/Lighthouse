@@ -81,7 +81,7 @@
                     <TableBody>
                         <template v-for="server in servers" :key="server.id">
                             <TableRow>
-                                <TableCell><NuxtLink to="/servers/">{{ server.name }}</NuxtLink></TableCell>
+                                <TableCell><NuxtLink :to="`/servers/${server.id}`">{{ server.name }}</NuxtLink></TableCell>
                                 <TableCell>{{ server.state }}</TableCell>
                                 <TableCell>{{ server.quickdata?.memory_used || 'N/A' }} </TableCell>
                                 <TableCell>{{ server.quickdata?.cpu_usage || 'N/A' }}</TableCell>

@@ -63,4 +63,14 @@ export interface BaseChartProps<T extends Record<string, any>> {
    * @default true
    */
   showGridLine?: boolean
+  /**
+   * Controls the yDomain
+   * @default [undefined, undefined]
+   */
+  yDomain?: [number, number]
+  /**
+   * Controls the xDomain
+   * @default [undefined, undefined]
+   */
+  xDomain?: [number, number]
 }
