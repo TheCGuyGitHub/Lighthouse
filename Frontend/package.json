@@ -38,6 +38,6 @@
     "@iconify/vue": "^5.0.0",
     "@nuxtjs/color-mode": "^3.5.2",
     "typescript": "^5.7.3",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^6.0.0"
   }
 }
